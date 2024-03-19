@@ -1,0 +1,55 @@
+<div>
+  <h2>Formulario de Registro</h2>
+  <form [formGroup]="personal" (ngSubmit)="enviarFormulario()">
+    <!-- <label>Nombre:</label>
+    <input type="text" name="name" />
+    <p></p> -->
+
+    <div class="control">
+      <label>
+        <span>Nombre:</span>
+        <input type="text" formControlName="name" />
+      </label>
+    </div>
+    <div class="control">
+      <label>
+        <span>Apellido:</span>
+        <input type="text" formControlName="lastName" />
+      </label>
+    </div>
+
+    <div class="control">
+      <label>
+        <span>Fecha de nacimiento:</span>
+        <input type="date" formControlName="birthDate" />
+      </label>
+    </div>
+    <div class="control">
+      <label>Género:</label>
+      <input type="radio" formControlName="gender" value="Masculino" />
+      <label>Masculino</label>
+      <input type="radio" formControlName="gender" value="femenino" />
+      <label>Femenino</label>
+      <input type="radio" formControlName="gender" value="otro" />
+      <label>Otro</label>
+      <input
+        type="radio"
+        formControlName="gender"
+        value="Prefiero no mencionarlo"
+      />
+      <label>Prefiero no mencionarlo</label>
+    </div>
+
+    <div class="control">
+      <label for="email">Correo Electrónico:</label
+      ><input type="text" formControlName="email" />
+    </div>
+
+    <div class="control">
+      <input type="checkbox" formControlName="newsletter" />Desea recibir
+      información de nuestra newsletter?
+    </div>
+
+    <button type="submit" [disabled]="!personal.valid">Guardar</button>
+  </form>
+</div>
