@@ -3,5 +3,96 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "challenge4_2": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/challenge4_2",
+      "sourceRoot": "projects/challenge4_2/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/challenge4_2",
+            "index": "projects/challenge4_2/src/index.html",
+            "browser": "projects/challenge4_2/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/challenge4_2/tsconfig.app.json",
+            "assets": [
+              "projects/challenge4_2/src/favicon.ico",
+              "projects/challenge4_2/src/assets"
+            ],
+            "styles": [
+              "projects/challenge4_2/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "challenge4_2:build:production"
+            },
+            "development": {
+              "buildTarget": "challenge4_2:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "challenge4_2:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/challenge4_2/tsconfig.spec.json",
+            "assets": [
+              "projects/challenge4_2/src/favicon.ico",
+              "projects/challenge4_2/src/assets"
+            ],
+            "styles": [
+              "projects/challenge4_2/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
   }
 }
