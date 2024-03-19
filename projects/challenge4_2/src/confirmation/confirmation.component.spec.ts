@@ -11,7 +11,7 @@ describe('ConfirmationComponent', () => {
       imports: [ConfirmationComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ConfirmationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
