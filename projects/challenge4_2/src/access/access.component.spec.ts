@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AccessComponent } from './access.component';
+import AccessComponent from './access.component';
 
 describe('AccesComponent', () => {
   let component: AccessComponent;
